@@ -1,271 +1,355 @@
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+/* Make entire body a flex container */
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  
-  /* Navigation */
-  header {
-    background-color: #1e1e1e;
-    padding: 15px 0;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  nav ul li {
-    margin: 0 20px;
-  }
-  
-  nav ul li a {
-    color: #f9f9f9;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  nav ul li a.active,
-  nav ul li a:hover {
-    color: #00c896;
-    border-bottom: 2px solid #00c896;
-    padding-bottom: 3px;
-  }
-  
-  /* Hero Section */
-  .hero-section {
-    background: linear-gradient(135deg, #00c896, #008c76);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
     color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero-section p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-  }
-  
-  .cta-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #fff;
-    color: #008c76;
-    border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .cta-btn:hover {
-    background-color: #eee;
-  }
-  
-  /* Project Sections */
-  .projects, .featured-projects {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  
-  .projects h1,
-  .featured-projects h2 {
+    font-weight: bold;
+}
+
+/* Make main grow and take available space */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.hero {
+    background-color: #0275d8;
+    color: #fff;
+    padding: 40px 20px;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: #222;
-  }
-  
-  .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 25px;
-  }
-  
-  .project-card {
+}
+
+.projects .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects .project-card {
     background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .project-card h2, .project-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #008c76;
-  }
-  
-  .project-card p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-  
-  .project-card a {
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.project-card h2 {
+    color: #333;
+}
+
+.project-card a {
+    color: #0275d8;
     text-decoration: none;
-    color: #00c896;
-    font-weight: 500;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* About Section */
-  .about {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-  
-  .about h1 {
+    font-weight: bold;
+}
+
+/* Sticky footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  .about p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Contact Form */
-  .contact {
-    padding: 60px 20px;
-    max-width: 700px;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+
+/* Project section styling */
+.projects {
+    padding: 4rem 2rem;
+    max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .contact h1 {
+}
+
+.projects h1 {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  .contact form {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Responsive project grid */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Project card styles */
+.project-card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-  }
-  
-  .contact label {
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  
-  .contact input, .contact textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-  }
-  
-  .contact button {
-    padding: 12px;
-    background-color: #00c896;
-    color: #fff;
-    border: none;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .contact button:hover {
-    background-color: #008c76;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #1e1e1e;
-    color: #f9f9f9;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: auto;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    nav ul li {
-      margin: 10px 0;
-    }
-  
-    .hero-section h1 {
-      font-size: 2.2rem;
-    }
-  
-    .hero-section p {
-      font-size: 1rem;
-    }
-  }
-  
-  .cta-resume {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: #007acc;
-    color: #fff;
+    justify-content: space-between;
 }
 
-.cta-resume h2 {
+.project-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #222;
+}
+
+.project-card p {
+    flex-grow: 1;
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 600;
+    border: 1px solid #0066cc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.project-card a:hover {
+    background-color: #0066cc;
+    color: #ffffff;
+}
+
+/* Hover animation for card */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects {
+        padding: 2rem 1rem;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+    }
+}
+.about {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.about-profile {
+    flex: 1 1 300px;
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.about-profile h2 {
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.cta-resume p {
+.about-profile p {
+    color: #777;
+    font-size: 1rem;
+}
+
+.about-content {
+    flex: 2 1 600px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-content h2 {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
-.skills-section {
-    padding: 3rem 1rem;
-    text-align: center;
-    background: #f9f9f9;
+.about-content ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 1.02rem;
 }
 
-.skills-section h2 {
+.cta-button {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #004a99;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+    }
+}
+
+.contact {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.05rem;
+    color: #555;
     margin-bottom: 2rem;
 }
 
-.skills-slider {
+.contact-form {
     display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 1rem 0;
-    scrollbar-width: none;
-}
-
-.skills-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.skill {
-    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 1.2rem;
     background: #fff;
-    padding: 1rem 2rem;
-    border-radius: 5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    font-weight: bold;
-    white-space: nowrap;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form label {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.02rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
 }
