@@ -21,12 +21,25 @@ function App() {
   return (
     <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="max-w-6xl mx-auto px-4">
-        <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Projects />
-        <About />
-        <Contact />
+
+      <main className="max-w-6xl mx-auto px-4 space-y-32"> {/* Added vertical spacing between sections */}
+        <section id="home" className="pt-20">
+          <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="contact" className="pt-20">
+          <Contact />
+        </section>
       </main>
+
       <Footer />
     </div>
   )
