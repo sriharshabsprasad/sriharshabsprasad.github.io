@@ -17,8 +17,7 @@ const skills = [
   { icon: <SiFlask className="text-gray-500" />, name: 'Flask' },
   { icon: <SiDjango className="text-green-700" />, name: 'Django' },
   { icon: <SiFastapi className="text-blue-700" />, name: 'FastAPI' },
-  { icon: <SiH2o className="text-teal-500" />, name: 'H2O.ai' },
-  { icon: <FaCloud className="text-blue-400" />, name: 'AWS (S3, EC2, SageMaker)' },
+  { icon: <FaCloud className="text-blue-400" />, name: 'AWS' },
 ];
 
 const About = () => (
