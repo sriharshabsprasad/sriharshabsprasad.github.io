@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   // Apply dark mode class to html
   useEffect(() => {
@@ -30,32 +30,5 @@ function App() {
     </div>
   );
 }
-
-//   return (
-//     <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-//       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-
-//       <main className="max-w-6xl mx-auto px-4 space-y-32"> {/* Added vertical spacing between sections */}
-//         <section id="home" className="pt-20">
-//           <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
-//         </section>
-
-//         <section id="projects">
-//           <Projects />
-//         </section>
-
-//         <section id="about">
-//           <About />
-//         </section>
-
-//         <section id="contact" className="pt-20">
-//           <Contact />
-//         </section>
-//       </main>
-
-//       <Footer />
-//     </div>
-//   )
-// }
 
 export default App
