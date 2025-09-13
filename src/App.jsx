@@ -17,32 +17,45 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
-
   return (
     <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-
-      <main className="max-w-6xl mx-auto px-4 space-y-32"> {/* Added vertical spacing between sections */}
-        <section id="home" className="pt-20">
-          <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
-        </section>
-
-        <section id="projects">
-          <Projects />
-        </section>
-
-        <section id="about">
-          <About />
-        </section>
-
-        <section id="contact" className="pt-20">
-          <Contact />
-        </section>
+      <main className="max-w-6xl mx-auto px-4 space-y-32">
+        <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Projects />
+        <About />
+        <Contact />
       </main>
-
       <Footer />
     </div>
-  )
+  );
 }
+
+//   return (
+//     <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+//       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+
+//       <main className="max-w-6xl mx-auto px-4 space-y-32"> {/* Added vertical spacing between sections */}
+//         <section id="home" className="pt-20">
+//           <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
+//         </section>
+
+//         <section id="projects">
+//           <Projects />
+//         </section>
+
+//         <section id="about">
+//           <About />
+//         </section>
+
+//         <section id="contact" className="pt-20">
+//           <Contact />
+//         </section>
+//       </main>
+
+//       <Footer />
+//     </div>
+//   )
+// }
 
 export default App
