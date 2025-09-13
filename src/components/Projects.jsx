@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { FaGithub } from 'react-icons/fa'
 
 const projectData = [
   {
@@ -70,27 +71,28 @@ const projectData = [
 ]
 
 const Projects = () => (
-  <section id="projects" className="py-20">
+  <section id="projects" className="py-20 max-w-6xl mx-auto px-4">
     <h2 className="text-3xl font-bold text-center mb-12">✨ Featured Projects</h2>
+
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projectData.map((p, i) => (
         <motion.div
           key={i}
-          className="border rounded p-6 hover:shadow-xl transition duration-300 dark:border-gray-700 dark:hover:shadow-gray-800"
+          className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition-transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
-          <p className="mb-4">{p.desc}</p>
+          <p className="mb-4 text-gray-700 dark:text-gray-300">{p.desc}</p>
           <a
             href={p.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline dark:text-blue-400"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
           >
-            View Code
+            <FaGithub /> View Code
           </a>
         </motion.div>
       ))}
