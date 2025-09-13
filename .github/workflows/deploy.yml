@@ -1,0 +1,37 @@
+name: Deploy React SPA to GitHub Pages (User Site)
+
+on:
+  push:
+    branches:
+      - main  # triggers deployment on every push to main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build React app
+      - name: Build React app
+        run: npm run build
+
+      # Step 5: Deploy build folder to main branch root
+      - name: Deploy to GitHub Pages (main branch)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: main      # must be main for user site
+          folder: build     # React build output
+          clean: true
