@@ -29,10 +29,10 @@ jobs:
         run: npm run build
 
       # Step 5: Deploy build folder to main branch root
-      - name: Deploy to GitHub Pages (main branch)
+      - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main      # must be main for user site
+          branch: gh-pages      # deploy to gh-pages branch
           folder: build     # React build output
           token: ${{ secrets.GITHUB_TOKEN }}  # use the default token
           clean: true
