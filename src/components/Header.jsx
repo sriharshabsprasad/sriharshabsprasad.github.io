@@ -26,7 +26,7 @@ const Header = ({ darkMode, setDarkMode }) => (
           </li>
         ))}
 
-        {/* Social Icons */}
+        {/* Social Icons
         <li>
           <a
             href="https://github.com/sriharshabsprasad"
@@ -46,7 +46,7 @@ const Header = ({ darkMode, setDarkMode }) => (
           >
             <FaKaggle size={20} />
           </a>
-        </li>
+        </li> */}
 
         {/* Dark/Light Mode Toggle */}
         <li>
