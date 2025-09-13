@@ -34,4 +34,5 @@ jobs:
         with:
           branch: main      # must be main for user site
           folder: build     # React build output
+          token: ${{ secrets.GITHUB_TOKEN }}  # use the default token
           clean: true
